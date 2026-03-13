@@ -4,12 +4,8 @@
   "description": "Site do Pro Davi",
   "main": ".eleventy.js",
   "scripts": {
-    "build": "node ./node_modules/@11ty/eleventy/bin/eleventy.js"
+    "build": "eleventy"
   },
-  "keywords": [],
-  "author": "Thiago",
-  "license": "ISC",
-  "type": "commonjs",
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0"
   }
