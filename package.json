@@ -1,11 +1,10 @@
 {
   "name": "site-davi-njk",
   "version": "1.0.0",
-  "description": "Portfólio do Professor Davi",
+  "description": "Site do Pro Davi",
   "main": ".eleventy.js",
   "scripts": {
-    "build": "eleventy",
-    "start": "eleventy --serve"
+    "build": "eleventy"
   },
   "keywords": [],
   "author": "Thiago",
