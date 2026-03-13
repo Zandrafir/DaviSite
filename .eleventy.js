@@ -1,11 +1,12 @@
 module.exports = function(eleventyConfig) {
-  // Diz ao Eleventy para copiar a pasta admin inteira para o site final
+  // ESSA É A LINHA MAIS IMPORTANTE:
   eleventyConfig.addPassthroughCopy("admin");
 
-  // Diz para copiar as imagens da raiz também
+  // Copia as imagens para que elas não sumam
   eleventyConfig.addPassthroughCopy("*.png");
   eleventyConfig.addPassthroughCopy("*.jpg");
   eleventyConfig.addPassthroughCopy("*.jpeg");
+  eleventyConfig.addPassthroughCopy("*.gif");
 
   return {
     dir: {

@@ -4,8 +4,8 @@
   "description": "Site do Pro Davi",
   "main": ".eleventy.js",
   "scripts": {
-    "build": "npm exec -- eleventy"
-  },
+  "build": "eleventy --config=.eleventy.js"
+},
   "keywords": [],
   "author": "Thiago",
   "license": "ISC",
