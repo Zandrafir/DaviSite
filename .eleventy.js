@@ -1,10 +1,11 @@
 module.exports = function(eleventyConfig) {
-  // Passa as extensões de imagens para a pasta public (assumindo que as imagens estão na raiz do projeto)
+  // Diz ao Eleventy para copiar a pasta admin inteira para o site final
+  eleventyConfig.addPassthroughCopy("admin");
+
+  // Diz para copiar as imagens da raiz também
   eleventyConfig.addPassthroughCopy("*.png");
   eleventyConfig.addPassthroughCopy("*.jpg");
-  
-  // Passa a pasta de administração do CMS
-  eleventyConfig.addPassthroughCopy("admin");
+  eleventyConfig.addPassthroughCopy("*.jpeg");
 
   return {
     dir: {
