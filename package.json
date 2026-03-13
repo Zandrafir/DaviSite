@@ -1,16 +1,17 @@
 {
   "name": "site-davi-njk",
   "version": "1.0.0",
-  "description": "",
+  "description": "Portfólio do Professor Davi",
   "main": ".eleventy.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "eleventy",
+    "start": "eleventy --serve"
   },
   "keywords": [],
-  "author": "",
+  "author": "Thiago",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
-    "@11ty/eleventy": "^3.1.2"
+    "@11ty/eleventy": "^3.0.0"
   }
 }
