@@ -3,11 +3,13 @@
   "version": "1.0.0",
   "description": "Site do Pro Davi",
   "main": ".eleventy.js",
-  {
   "scripts": {
     "build": "npx @11ty/eleventy"
-  }
-}
+  },
+  "keywords": [],
+  "author": "Thiago",
+  "license": "ISC",
+  "type": "commonjs",
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0"
   }
