@@ -1,0 +1,16 @@
+backend:
+  name: github
+  repo: Zandrafir/DaviSite
+  branch: main
+
+media_folder: "assets/img"
+public_folder: "/assets/img"
+
+collections:
+  - name: "post"
+    label: "Aulas"
+    folder: "_posts"
+    create: true
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Conteúdo", name: "body", widget: "markdown" }
