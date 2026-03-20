@@ -1,8 +1,9 @@
 module.exports = function(eleventyConfig) {
-  // ESSA É A LINHA MAIS IMPORTANTE:
   eleventyConfig.addPassthroughCopy("admin");
+  
+  // Isso garante que a pasta de imagens que o CMS vai criar seja copiada
+  eleventyConfig.addPassthroughCopy("assets");
 
-  // Copia as imagens para que elas não sumam
   eleventyConfig.addPassthroughCopy("*.png");
   eleventyConfig.addPassthroughCopy("*.jpg");
   eleventyConfig.addPassthroughCopy("*.jpeg");
