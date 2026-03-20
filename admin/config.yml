@@ -1,8 +1,9 @@
 backend:
-  name: git-gateway
-  branch: main # Mude para 'master' se o seu branch principal for master
+  name: github
+  repo: Zandrafir/DaviSite
+  branch: main
 
-media_folder: "" # Deixa na raiz do projeto onde suas imagens atuais estão
+media_folder: "/" # Onde as fotos novas serão salvas
 public_folder: "/" 
 
 collections:
