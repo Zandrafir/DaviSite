@@ -4,11 +4,48 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Painel Administrativo - Pro Davi</title>
-
-  <link href="config.yml" type="text/yaml" rel="cms-config-url">
-
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </head>
 <body>
+  <script>
+    // Configuração "Injetada" diretamente para evitar erro 404
+    CMS.init({
+      config: {
+        backend: {
+          name: 'github',
+          repo: 'Zandrafir/DaviSite',
+          branch: 'main',
+        },
+        media_folder: 'assets/img',
+        public_folder: '/assets/img',
+        collections: [
+          {
+            name: 'pages',
+            label: 'Páginas',
+            files: [
+              {
+                file: 'index.njk',
+                label: 'Página Inicial',
+                name: 'home',
+                fields: [
+                  {label: 'Título Principal', name: 'title', widget: 'string'},
+                  {label: 'Subtítulo (Tagline)', name: 'tagline', widget: 'string'},
+                  {label: 'Imagem de Fundo (Banner)', name: 'banner_image', widget: 'image'},
+                  {label: 'Imagem do Mascote', name: 'mascot_image', widget: 'image'},
+                  {label: 'Nome do Professor', name: 'teacher_name', widget: 'string'},
+                  {label: 'Nome da Escola', name: 'school_name', widget: 'string'},
+                  {label: 'Disciplina', name: 'subject_name', widget: 'string'},
+                  {label: 'Imagem: Sobre o Professor', name: 'card1_image', widget: 'image'},
+                  {label: 'Imagem: O que é Sociologia', name: 'card2_image', widget: 'image'},
+                  {label: 'Imagem: Temas Estudados', name: 'card3_image', widget: 'image'},
+                  {label: 'Imagem: Projetos e Atividades', name: 'card4_image', widget: 'image'},
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    });
+  </script>
 </body>
 </html>
