@@ -1,10 +1,9 @@
 backend:
-  name: github
-  repo: Zandrafir/DaviSite
-  branch: main
+  name: git-gateway
+  branch: main # Mude para 'master' se seu branch principal for master
 
-media_folder: "/" # Onde as fotos novas serão salvas
-public_folder: "/" 
+media_folder: "assets/img"
+public_folder: "/assets/img"
 
 collections:
   - name: "pages"
@@ -15,13 +14,13 @@ collections:
         name: "home"
         fields:
           - {label: "Título Principal", name: "title", widget: "string"}
-          - {label: "Subtítulo (Tagline)", name: "tagline", widget: "string"}
-          - {label: "Imagem de Fundo (Banner)", name: "banner_image", widget: "image"}
+          - {label: "Subtítulo", name: "tagline", widget: "string"}
+          - {label: "Imagem de Fundo", name: "banner_image", widget: "image"}
           - {label: "Imagem do Mascote", name: "mascot_image", widget: "image"}
           - {label: "Nome do Professor", name: "teacher_name", widget: "string"}
-          - {label: "Nome da Escola", name: "school_name", widget: "string"}
+          - {label: "Escola", name: "school_name", widget: "string"}
           - {label: "Disciplina", name: "subject_name", widget: "string"}
-          - {label: "Imagem: Sobre o Professor", name: "card1_image", widget: "image"}
-          - {label: "Imagem: O que é Sociologia", name: "card2_image", widget: "image"}
-          - {label: "Imagem: Temas Estudados", name: "card3_image", widget: "image"}
-          - {label: "Imagem: Projetos e Atividades", name: "card4_image", widget: "image"}
+          - {label: "Foto Professor", name: "card1_image", widget: "image"}
+          - {label: "Foto Sociologia", name: "card2_image", widget: "image"}
+          - {label: "Foto Temas", name: "card3_image", widget: "image"}
+          - {label: "Foto Projetos", name: "card4_image", widget: "image"}
