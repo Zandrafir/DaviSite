@@ -4,50 +4,20 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Painel Administrativo - Pro Davi</title>
-  <script>window.CMS_MANUAL_INIT = true;</script>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
   <script>
-    CMS.init({
-      config: {
-        backend: {
-          name: 'github',
-          repo: 'Zandrafir/DaviSite',
-          branch: 'main',
-          base_url: 'https://cms-auth-github.vercel.app',
-        },
-        display_url: 'https://davi-site-ten.vercel.app',
-        media_folder: 'assets/img',
-        public_folder: '/assets/img',
-        collections: [
-          {
-            name: 'pages',
-            label: 'Páginas',
-            files: [
-              {
-                file: 'index.njk',
-                label: 'Página Inicial',
-                name: 'home',
-                fields: [
-                  {label: 'Título Principal', name: 'title', widget: 'string'},
-                  {label: 'Subtítulo', name: 'tagline', widget: 'string'},
-                  {label: 'Imagem de Fundo', name: 'banner_image', widget: 'image'},
-                  {label: 'Mascote', name: 'mascot_image', widget: 'image'},
-                  {label: 'Nome do Professor', name: 'teacher_name', widget: 'string'},
-                  {label: 'Escola', name: 'school_name', widget: 'string'},
-                  {label: 'Disciplina', name: 'subject_name', widget: 'string'},
-                  {label: 'Foto Professor', name: 'card1_image', widget: 'image'},
-                  {label: 'Foto Sociologia', name: 'card2_image', widget: 'image'},
-                  {label: 'Foto Temas', name: 'card3_image', widget: 'image'},
-                  {label: 'Foto Projetos', name: 'card4_image', widget: 'image'},
-                ],
-              },
-            ],
-          },
-        ],
-      },
-    });
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
   </script>
 </body>
 </html>
