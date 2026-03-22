@@ -1,243 +1,254 @@
----
-title: Professor Davi
-layout: null
-tagline: SOCIOLOGIA E ALEGRIA
-mascot_image: "/Mascote.png"
-banner_image: "/banner.png"
-teacher_name: Davi
-school_name: PEI José Ephin Mindlin
-subject_name: Sociologia
-card1_image: "/foto_professor.png"
-card2_image: "/diagrama_sociologia.png"
-card3_image: "/tema1.png"
-card4_image: "/foto_estudantes.jpg"
----
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PRO DAVI - Sociologia e Alegria</title>
-    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
-    
-    <style>
-        /* Estilos Globais */
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: #d1e1f1;
-            color: black;
-            position: relative; 
-        }
+    ---
+    title: Professor Davi
+    layout: null
+    tagline: SOCIOLOGIA E ALEGRIA
+    mascot_image: "/Mascote.png"
+    banner_image: "/banner.png"
+    teacher_name: Davi
+    school_name: PEI José Ephin Mindlin
+    subject_name: Sociologia
+    card1_image: "/foto_professor.png"
+    card2_image: "/diagrama_sociologia.png"
+    card3_image: "/tema1.png"
+    card4_image: "/foto_estudantes.jpg"
+    ---
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PRO DAVI - Sociologia e Alegria</title>
+        <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
-        /* Seção do Header / Banner */
-        .site-header {
-            background-image: url('{{ banner_image }}');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 80px 20px 60px 20px;
-            text-align: center;
-            overflow: visible;
-        }
-
-        .header-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .header-text-block {
-            text-align: center;
-            z-index: 2;
-        }
-
-        /* ESTILO POKÉMON NO TÍTULO */
-        .header-text-block h1 {
-            font-family: 'Luckiest Guy', cursive;
-            font-size: 5.5rem;
-            margin: 0;
-            color: #ffcc00;
-            letter-spacing: 4px;
-            text-shadow: 
-                -3px -3px 0 #3c5aa6,  
-                 3px -3px 0 #3c5aa6,
-                -3px  3px 0 #3c5aa6,
-                 3px  3px 0 #3c5aa6,
-                 6px  6px 0 rgba(0,0,0,0.4);
-            text-transform: uppercase;
-        }
-
-        .header-text-block .tagline {
-            font-family: 'Luckiest Guy', cursive;
-            font-size: 1.8rem;
-            margin: 5px 0 0 0;
-            color: #ffcc00;
-            text-shadow: 
-                -2px -2px 0 #3c5aa6,  
-                 2px -2px 0 #3c5aa6,
-                -2px  2px 0 #3c5aa6,
-                 2px  2px 0 #3c5aa6;
-            text-transform: uppercase;
-        }
-
-        /* MASCOTE NO CANTO DIREITO */
-        .header-mascot {
-            width: auto;
-            height: 320px;
-            position: absolute;
-            right: 5%; 
-            top: 280px; 
-            z-index: 10; 
-        }
-
-        /* Barra de Informações Branca */
-        .info-bar {
-            background-color: white;
-            padding: 15px 0;
-            text-align: center;
-            position: relative;
-            z-index: 5;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-
-        .info-content {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-            font-size: 1.1rem;
-            font-weight: bold;
-        }
-
-        .info-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        /* Grade de Cartões */
-        .card-grid-container {
-            padding: 60px 20px;
-        }
-
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .card {
-            background-color: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            border-bottom: 5px solid #3c5aa6;
-        }
-
-        .card-top-bar {
-            padding: 10px;
-            background-color: #f8f8f8;
-            font-size: 0.9rem;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .card-content {
-            padding: 15px;
-            flex-grow: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 180px;
-        }
-
-        .card-label {
-            padding: 15px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            background-color: #fff;
-        }
-
-        /* Estilos para imagens dentro dos cards */
-        .mosaic-item img, .card-photo, .card-diagram {
-            width: 100%;
-            height: auto;
-            border-radius: 4px;
-        }
-
-        /* Ajustes Mobile */
-        @media (max-width: 900px) {
-            .header-mascot {
-                display: none; 
+        <style>
+            /* Estilos Globais */
+            body {
+                margin: 0;
+                padding: 0;
+                font-family: Arial, sans-serif;
+                background-color: #d1e1f1;
+                color: black;
+                position: relative; 
             }
+
+            /* Seção do Header / Banner */
+            .site-header {
+                background-image: url('{{ banner_image }}');
+                background-size: cover;
+                background-position: center;
+                color: white;
+                padding: 80px 20px 60px 20px;
+                text-align: center;
+                overflow: visible;
+            }
+
+            .header-content {
+                max-width: 1200px;
+                margin: 0 auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .header-text-block {
+                text-align: center;
+                z-index: 2;
+            }
+
+            /* ESTILO POKÉMON NO TÍTULO */
             .header-text-block h1 {
-                font-size: 3.5rem;
+                font-family: 'Luckiest Guy', cursive;
+                font-size: 5.5rem;
+                margin: 0;
+                color: #ffcc00;
+                letter-spacing: 4px;
+                text-shadow: 
+                    -3px -3px 0 #3c5aa6,  
+                    3px -3px 0 #3c5aa6,
+                    -3px  3px 0 #3c5aa6,
+                    3px  3px 0 #3c5aa6,
+                    6px  6px 0 rgba(0,0,0,0.4);
+                text-transform: uppercase;
             }
+
+            .header-text-block .tagline {
+                font-family: 'Luckiest Guy', cursive;
+                font-size: 1.8rem;
+                margin: 5px 0 0 0;
+                color: #ffcc00;
+                text-shadow: 
+                    -2px -2px 0 #3c5aa6,  
+                    2px -2px 0 #3c5aa6,
+                    -2px  2px 0 #3c5aa6,
+                    2px  2px 0 #3c5aa6;
+                text-transform: uppercase;
+            }
+
+            /* MASCOTE NO CANTO DIREITO */
+            .header-mascot {
+                width: auto;
+                height: 320px;
+                position: absolute;
+                right: 5%; 
+                top: 280px; 
+                z-index: 10; 
+            }
+
+            /* Barra de Informações Branca */
+            .info-bar {
+                background-color: white;
+                padding: 15px 0;
+                text-align: center;
+                position: relative;
+                z-index: 5;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            }
+
+            .info-content {
+                display: flex;
+                justify-content: center;
+                gap: 40px;
+                max-width: 1200px;
+                margin: 0 auto;
+                font-size: 1.1rem;
+                font-weight: bold;
+            }
+
+            .info-item {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            /* Grade de Cartões */
+            .card-grid-container {
+                padding: 60px 20px;
+            }
+
             .card-grid {
-                grid-template-columns: repeat(2, 1fr);
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 20px;
+                max-width: 1200px;
+                margin: 0 auto;
             }
-        }
-    </style>
-</head>
-<body>
 
-    <header class="site-header">
-        <div class="header-content">
-            <div class="header-text-block">
-                <h1>{{ title }}</h1>
-                <p class="tagline">{{ tagline }}</p>
-            </div>
-        </div>
-    </header>
+            .card {
+                background-color: white;
+                border-radius: 12px;
+                overflow: hidden;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                border-bottom: 5px solid #3c5aa6;
+            }
 
-    <img src="{{ mascot_image }}" alt="Mascote da Sociologia" class="header-mascot">
+            .card-top-bar {
+                padding: 10px;
+                background-color: #f8f8f8;
+                font-size: 0.9rem;
+                border-bottom: 1px solid #ddd;
+            }
 
-    <nav class="info-bar">
-        <div class="info-content">
-            <span class="info-item">👨‍🏫 Professor: {{ teacher_name }}</span>
-            <span class="info-item">🏫 Escola: {{ school_name }}</span>
-            <span class="info-item">📚 Disciplina: {{ subject_name }}</span>
-        </div>
-    </nav>
+            .card-content {
+                padding: 15px;
+                flex-grow: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                min-height: 180px;
+            }
 
-    <main class="card-grid-container">
-        <div class="card-grid">
-            <div class="card">
-                <div class="card-top-bar">📖 Sobre o Professor</div>
-                <div class="card-content"><img src="{{ card1_image }}" class="card-photo" alt="Foto do Professor"></div>
-                <p class="card-label">Sobre o Professor</p>
-            </div>
+            .card-label {
+                padding: 15px;
+                font-size: 1.2rem;
+                font-weight: bold;
+                background-color: #fff;
+            }
 
-            <div class="card">
-                <div class="card-top-bar">🔍 O que é Sociologia</div>
-                <div class="card-content"><img src="{{ card2_image }}" class="card-diagram" alt="Diagrama"></div>
-                <p class="card-label">O que é Sociologia</p>
-            </div>
+            /* Estilos para imagens dentro dos cards */
+            .mosaic-item img, .card-photo, .card-diagram {
+                width: 100%;
+                height: auto;
+                border-radius: 4px;
+            }
 
-            <div class="card">
-                <div class="card-top-bar">📖 Temas Estudados</div>
-                <div class="card-content">
-                    <img src="{{ card3_image }}" class="card-photo" alt="Tema Estudado 1">
+            /* Ajustes Mobile */
+            @media (max-width: 900px) {
+                .header-mascot {
+                    display: none; 
+                }
+                .header-text-block h1 {
+                    font-size: 3.5rem;
+                }
+                .card-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+        </style>
+    </head>
+    <body>
+
+        <header class="site-header">
+            <div class="header-content">
+                <div class="header-text-block">
+                    <h1>{{ title }}</h1>
+                    <p class="tagline">{{ tagline }}</p>
                 </div>
-                <p class="card-label">Temas Estudados</p>
             </div>
+        </header>
 
-            <div class="card">
-                <div class="card-top-bar">🔍 Projetos</div>
-                <div class="card-content"><img src="{{ card4_image }}" class="card-photo" alt="Projetos"></div>
-                <p class="card-label">Projetos e Atividades</p>
+        <img src="{{ mascot_image }}" alt="Mascote da Sociologia" class="header-mascot">
+
+        <nav class="info-bar">
+            <div class="info-content">
+                <span class="info-item">👨‍🏫 Professor: {{ teacher_name }}</span>
+                <span class="info-item">🏫 Escola: {{ school_name }}</span>
+                <span class="info-item">📚 Disciplina: {{ subject_name }}</span>
             </div>
-        </div>
-    </main>
+        </nav>
 
-</body>
-</html>
+        <main class="card-grid-container">
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-top-bar">📖 Sobre o Professor</div>
+                    <div class="card-content"><img src="{{ card1_image }}" class="card-photo" alt="Foto do Professor"></div>
+                    <p class="card-label">Sobre o Professor</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-top-bar">🔍 O que é Sociologia</div>
+                    <div class="card-content"><img src="{{ card2_image }}" class="card-diagram" alt="Diagrama"></div>
+                    <p class="card-label">O que é Sociologia</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-top-bar">📖 Temas Estudados</div>
+                    <div class="card-content">
+                        <img src="{{ card3_image }}" class="card-photo" alt="Tema Estudado 1">
+                    </div>
+                    <p class="card-label">Temas Estudados</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-top-bar">🔍 Projetos</div>
+                    <div class="card-content"><img src="{{ card4_image }}" class="card-photo" alt="Projetos"></div>
+                    <p class="card-label">Projetos e Atividades</p>
+                </div>
+            </div>
+        </main>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
+    </body>
+    </html>
