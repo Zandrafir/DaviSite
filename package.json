@@ -2,14 +2,9 @@
   "name": "site-davi-njk",
   "version": "1.0.0",
   "description": "Site do Pro Davi",
-  "main": ".eleventy.js",
   "scripts": {
-  "build": "eleventy --config=.eleventy.js"
-},
-  "keywords": [],
-  "author": "Thiago",
-  "license": "ISC",
-  "type": "commonjs",
+    "build": "eleventy"
+  },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0"
   }
