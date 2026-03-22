@@ -3,7 +3,7 @@ backend:
   branch: main
 
 media_folder: "assets/img"
-public_folder: "/assets/img"
+public_folder: "assets/img"
 
 collections:
   - name: "pages"
@@ -14,9 +14,9 @@ collections:
         name: "home"
         fields:
           - {label: "Título Principal", name: "title", widget: "string", required: false}
-          - {label: "Subtítulo (Legenda)", name: "tagline", widget: "string", required: false}
+          - {label: "Subtítulo", name: "tagline", widget: "string", required: false}
           - {label: "Imagem de Fundo", name: "banner_image", widget: "image", required: false}
-          - {label: "Imagem do Mascote", name: "mascot_image", widget: "image", required: false}
+          - {label: "Mascote", name: "mascot_image", widget: "image", required: false}
           - {label: "Nome do Professor", name: "teacher_name", widget: "string", required: false}
           - {label: "Escola", name: "school_name", widget: "string", required: false}
           - {label: "Disciplina", name: "subject_name", widget: "string", required: false}

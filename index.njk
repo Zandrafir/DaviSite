@@ -20,175 +20,37 @@ card4_image: assets/img/foto_estudantes.jpg
     <title>PRO DAVI - Sociologia e Alegria</title>
     <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: #d1e1f1;
-            color: black;
-            position: relative; 
-        }
-
-        .site-header {
-            background-image: url('/{{ banner_image }}');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 80px 20px 60px 20px;
-            text-align: center;
-            overflow: visible;
-        }
-
-        .header-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .header-text-block {
-            text-align: center;
-            z-index: 2;
-        }
-
-        .header-text-block h1 {
-            font-family: 'Luckiest Guy', cursive;
-            font-size: 5.5rem;
-            margin: 0;
-            color: #ffcc00;
-            letter-spacing: 4px;
-            text-shadow: -3px -3px 0 #3c5aa6, 3px -3px 0 #3c5aa6, -3px 3px 0 #3c5aa6, 3px 3px 0 #3c5aa6, 6px 6px 0 rgba(0,0,0,0.4);
-            text-transform: uppercase;
-        }
-
-        .header-text-block .tagline {
-            font-family: 'Luckiest Guy', cursive;
-            font-size: 1.8rem;
-            margin: 5px 0 0 0;
-            color: #ffcc00;
-            text-shadow: -2px -2px 0 #3c5aa6, 2px -2px 0 #3c5aa6, -2px 2px 0 #3c5aa6, 2px 2px 0 #3c5aa6;
-            text-transform: uppercase;
-        }
-
-        .header-mascot {
-            width: auto;
-            height: 320px;
-            position: absolute;
-            right: 5%; 
-            top: 280px; 
-            z-index: 10; 
-        }
-
-        .info-bar {
-            background-color: white;
-            padding: 15px 0;
-            text-align: center;
-            position: relative;
-            z-index: 5;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-
-        .info-content {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-            font-size: 1.1rem;
-            font-weight: bold;
-        }
-
-        .card-grid-container {
-            padding: 60px 20px;
-        }
-
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .card {
-            background-color: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            border-bottom: 5px solid #3c5aa6;
-        }
-
-        .card-top-bar { padding: 10px; background-color: #f8f8f8; font-size: 0.9rem; border-bottom: 1px solid #ddd; }
-        .card-content { padding: 15px; flex-grow: 1; display: flex; align-items: center; justify-content: center; min-height: 180px; }
-        .card-label { padding: 15px; font-size: 1.2rem; font-weight: bold; background-color: #fff; }
-        .card-photo, .card-diagram { width: 100%; height: auto; border-radius: 4px; }
-
-        @media (max-width: 900px) {
-            .header-mascot { display: none; }
-            .header-text-block h1 { font-size: 3.5rem; }
-            .card-grid { grid-template-columns: repeat(2, 1fr); }
-        }
+        body { margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #d1e1f1; }
+        .site-header { background-image: url('/{{ banner_image }}'); background-size: cover; background-position: center; color: white; padding: 80px 20px; text-align: center; }
+        .header-text-block h1 { font-family: 'Luckiest Guy', cursive; font-size: 5rem; color: #ffcc00; text-shadow: 3px 3px 0 #3c5aa6; margin: 0; }
+        .header-mascot { height: 300px; position: absolute; right: 5%; top: 250px; }
+        .info-bar { background: white; padding: 15px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .card-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 1200px; margin: 40px auto; padding: 20px; }
+        .card { background: white; border-radius: 12px; padding: 15px; text-align: center; border-bottom: 5px solid #3c5aa6; }
+        .card img { width: 100%; border-radius: 8px; }
+        @media (max-width: 900px) { .header-mascot { display: none; } .card-grid { grid-template-columns: repeat(2, 1fr); } }
     </style>
 </head>
 <body>
     <header class="site-header">
-        <div class="header-content">
-            <div class="header-text-block">
-                <h1>{{ title }}</h1>
-                <p class="tagline">{{ tagline }}</p>
-            </div>
-        </div>
+        <h1>{{ title }}</h1>
+        <p style="font-family: 'Luckiest Guy'; color: #ffcc00; font-size: 1.5rem;">{{ tagline }}</p>
     </header>
-
-    <img src="/{{ mascot_image }}" alt="Mascote" class="header-mascot">
-
+    <img src="/{{ mascot_image }}" class="header-mascot">
     <nav class="info-bar">
-        <div class="info-content">
-            <span>👨‍🏫 Professor: {{ teacher_name }}</span>
-            <span>🏫 Escola: {{ school_name }}</span>
-            <span>📚 Disciplina: {{ subject_name }}</span>
-        </div>
+        <strong>👨‍🏫 {{ teacher_name }} | 🏫 {{ school_name }} | 📚 {{ subject_name }}</strong>
     </nav>
-
-    <main class="card-grid-container">
-        <div class="card-grid">
-            <div class="card">
-                <div class="card-top-bar">📖 Sobre o Professor</div>
-                <div class="card-content"><img src="/{{ card1_image }}" class="card-photo"></div>
-                <p class="card-label">Sobre o Professor</p>
-            </div>
-            <div class="card">
-                <div class="card-top-bar">🔍 O que é Sociologia</div>
-                <div class="card-content"><img src="/{{ card2_image }}" class="card-diagram"></div>
-                <p class="card-label">O que é Sociologia</p>
-            </div>
-            <div class="card">
-                <div class="card-top-bar">📖 Temas Estudados</div>
-                <div class="card-content"><img src="/{{ card3_image }}" class="card-photo"></div>
-                <p class="card-label">Temas Estudados</p>
-            </div>
-            <div class="card">
-                <div class="card-top-bar">🔍 Projetos</div>
-                <div class="card-content"><img src="/{{ card4_image }}" class="card-photo"></div>
-                <p class="card-label">Projetos e Atividades</p>
-            </div>
-        </div>
+    <main class="card-grid">
+        <div class="card"><img src="/{{ card1_image }}"><p>Sobre o Professor</p></div>
+        <div class="card"><img src="/{{ card2_image }}"><p>O que é Sociologia</p></div>
+        <div class="card"><img src="/{{ card3_image }}"><p>Temas Estudados</p></div>
+        <div class="card"><img src="/{{ card4_image }}"><p>Projetos</p></div>
     </main>
-
     <script>
       if (window.netlifyIdentity) {
         window.netlifyIdentity.on("init", user => {
-          if (!user) {
-            window.netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/";
-            });
-          }
+          if (!user) { window.netlifyIdentity.on("login", () => { document.location.href = "/admin/"; }); }
         });
       }
     </script>
