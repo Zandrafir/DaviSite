@@ -1,20 +1,26 @@
-module.exports = function(eleventyConfig) {
-  // 1. Copia a pasta do painel administrativo
-  eleventyConfig.addPassthroughCopy("admin");
+backend:
+  name: git-gateway
+  branch: main
 
-  // 2. Copia a pasta assets (onde estarão suas fotos)
-  eleventyConfig.addPassthroughCopy("assets");
+media_folder: "assets/img"
+public_folder: "assets/img"
 
-  // 3. Garante a cópia de imagens que possam estar soltas
-  eleventyConfig.addPassthroughCopy("*.png");
-  eleventyConfig.addPassthroughCopy("*.jpg");
-  eleventyConfig.addPassthroughCopy("*.jpeg");
-  eleventyConfig.addPassthroughCopy("*.gif");
-
-  return {
-    dir: {
-      input: ".",
-      output: "_site"
-    }
-  };
-};
+collections:
+  - name: "pages"
+    label: "Páginas"
+    files:
+      - file: "index.njk"
+        label: "Página Inicial"
+        name: "home"
+        fields:
+          - {label: "Título Principal", name: "title", widget: "string", required: false}
+          - {label: "Subtítulo (Legenda)", name: "tagline", widget: "string", required: false}
+          - {label: "Imagem de Fundo", name: "banner_image", widget: "image", required: false}
+          - {label: "Imagem do Mascote", name: "mascot_image", widget: "image", required: false}
+          - {label: "Nome do Professor", name: "teacher_name", widget: "string", required: false}
+          - {label: "Escola", name: "school_name", widget: "string", required: false}
+          - {label: "Disciplina", name: "subject_name", widget: "string", required: false}
+          - {label: "Foto Professor", name: "card1_image", widget: "image", required: false}
+          - {label: "Foto Sociologia", name: "card2_image", widget: "image", required: false}
+          - {label: "Foto Temas", name: "card3_image", widget: "image", required: false}
+          - {label: "Foto Projetos", name: "card4_image", widget: "image", required: false}
