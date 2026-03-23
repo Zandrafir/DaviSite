@@ -37,33 +37,23 @@ card4_image: assets/img/foto_estudantes.jpg
 </head>
 <body>
     <header class="site-header">
-        <div class="header-text-block">
-            <h1>{{ title }}</h1>
-            <p style="font-family: 'Luckiest Guy'; color: #ffcc00; font-size: 1.8rem; margin-top: 10px;">{{ tagline }}</p>
-        </div>
+        <h1>{{ title }}</h1>
+        <p style="font-family: 'Luckiest Guy'; color: #ffcc00; font-size: 1.5rem;">{{ tagline }}</p>
     </header>
-
-    <img src="/{{ mascot_image }}" alt="Mascote" class="header-mascot">
-
+    <img src="/{{ mascot_image }}" class="header-mascot">
     <nav class="info-bar">
-        <strong>👨‍🏫 Professor: {{ teacher_name }} | 🏫 Escola: {{ school_name }} | 📚 Disciplina: {{ subject_name }}</strong>
+        <strong>👨‍🏫 {{ teacher_name }} | 🏫 {{ school_name }} | 📚 {{ subject_name }}</strong>
     </nav>
-
     <main class="card-grid">
         <div class="card"><img src="/{{ card1_image }}"><p>Sobre o Professor</p></div>
         <div class="card"><img src="/{{ card2_image }}"><p>O que é Sociologia</p></div>
         <div class="card"><img src="/{{ card3_image }}"><p>Temas Estudados</p></div>
         <div class="card"><img src="/{{ card4_image }}"><p>Projetos</p></div>
     </main>
-
     <script>
       if (window.netlifyIdentity) {
         window.netlifyIdentity.on("init", user => {
-          if (!user) {
-            window.netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/";
-            });
-          }
+          if (!user) { window.netlifyIdentity.on("login", () => { document.location.href = "/admin/"; }); }
         });
       }
     </script>

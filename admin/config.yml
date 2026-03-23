@@ -13,14 +13,14 @@ collections:
         label: "Página Inicial"
         name: "home"
         fields:
-          - {label: "Título Principal", name: "title", widget: "string", required: false}
-          - {label: "Subtítulo (Legenda)", name: "tagline", widget: "string", required: false}
-          - {label: "Imagem de Fundo", name: "banner_image", widget: "image", required: false}
-          - {label: "Imagem do Mascote", name: "mascot_image", widget: "image", required: false}
-          - {label: "Nome do Professor", name: "teacher_name", widget: "string", required: false}
-          - {label: "Escola", name: "school_name", widget: "string", required: false}
-          - {label: "Disciplina", name: "subject_name", widget: "string", required: false}
-          - {label: "Foto Professor", name: "card1_image", widget: "image", required: false}
-          - {label: "Foto Sociologia", name: "card2_image", widget: "image", required: false}
-          - {label: "Foto Temas", name: "card3_image", widget: "image", required: false}
-          - {label: "Foto Projetos", name: "card4_image", widget: "image", required: false}
+          - {label: "Título Principal", name: "title", widget: "string"}
+          - {label: "Subtítulo (Legenda)", name: "tagline", widget: "string"}
+          - {label: "Caminho Banner", name: "banner_image", widget: "string"}
+          - {label: "Caminho Mascote", name: "mascot_image", widget: "string"}
+          - {label: "Nome do Professor", name: "teacher_name", widget: "string"}
+          - {label: "Escola", name: "school_name", widget: "string"}
+          - {label: "Disciplina", name: "subject_name", widget: "string"}
+          - {label: "Caminho Foto Prof", name: "card1_image", widget: "string"}
+          - {label: "Caminho Foto Soc", name: "card2_image", widget: "string"}
+          - {label: "Caminho Foto Temas", name: "card3_image", widget: "string"}
+          - {label: "Caminho Foto Proj", name: "card4_image", widget: "string"}
