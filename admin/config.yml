@@ -3,7 +3,7 @@ backend:
   branch: main
 
 media_folder: "assets/img"
-public_folder: "/assets/img" # Adicione a barra aqui, mas mantenha as aspas
+public_folder: "assets/img"
 
 collections:
   - name: "pages"
@@ -23,4 +23,4 @@ collections:
           - {label: "Foto Professor", name: "card1_image", widget: "image", required: false}
           - {label: "Foto Sociologia", name: "card2_image", widget: "image", required: false}
           - {label: "Foto Temas", name: "card3_image", widget: "image", required: false}
-          - {label: "Foto Projetos", name: "card4_image", widget: "image", required: false}S
+          - {label: "Foto Projetos", name: "card4_image", widget: "image", required: false}

@@ -2,15 +2,15 @@
 title: Professor Davi
 layout: null
 tagline: SOCIOLOGIA E ALEGRIA
-mascot_image: /assets/img/Mascote.png
-banner_image: /assets/img/banner.png
+mascot_image: assets/img/Mascote.png
+banner_image: assets/img/banner.png
 teacher_name: Davi
 school_name: PEI José Ephin Mindlin
 subject_name: Sociologia
-card1_image: /assets/img/foto_professor.png
-card2_image: /assets/img/diagrama_sociologia.png
-card3_image: /assets/img/tema1.png
-card4_image: /assets/img/foto_estudantes.jpg
+card1_image: assets/img/foto_professor.png
+card2_image: assets/img/diagrama_sociologia.png
+card3_image: assets/img/tema1.png
+card4_image: assets/img/foto_estudantes.jpg
 ---
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -19,24 +19,14 @@ card4_image: /assets/img/foto_estudantes.jpg
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PRO DAVI - Sociologia e Alegria</title>
     <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/decap-cms@^3.1.2/dist/decap-cms.js"></script>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <style>
         body { margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #d1e1f1; }
         .site-header { 
             background-image: url('/{{ banner_image }}'); 
-            background-size: cover; 
-            background-position: center; 
-            color: white; 
-            padding: 80px 20px; 
-            text-align: center; 
+            background-size: cover; background-position: center; color: white; padding: 80px 20px; text-align: center; 
         }
-        .header-text-block h1 { 
-            font-family: 'Luckiest Guy', cursive; 
-            font-size: 5rem; 
-            color: #ffcc00; 
-            text-shadow: 3px 3px 0 #3c5aa6; 
-            margin: 0; 
-        }
+        .header-text-block h1 { font-family: 'Luckiest Guy', cursive; font-size: 5rem; color: #ffcc00; text-shadow: 3px 3px 0 #3c5aa6; margin: 0; }
         .header-mascot { height: 300px; position: absolute; right: 5%; top: 250px; }
         .info-bar { background: white; padding: 15px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
         .card-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 1200px; margin: 40px auto; padding: 20px; }
@@ -47,23 +37,33 @@ card4_image: /assets/img/foto_estudantes.jpg
 </head>
 <body>
     <header class="site-header">
-        <h1>{{ title }}</h1>
-        <p style="font-family: 'Luckiest Guy'; color: #ffcc00; font-size: 1.5rem;">{{ tagline }}</p>
+        <div class="header-text-block">
+            <h1>{{ title }}</h1>
+            <p style="font-family: 'Luckiest Guy'; color: #ffcc00; font-size: 1.8rem; margin-top: 10px;">{{ tagline }}</p>
+        </div>
     </header>
-    <img src="/{{ mascot_image }}" class="header-mascot">
+
+    <img src="/{{ mascot_image }}" alt="Mascote" class="header-mascot">
+
     <nav class="info-bar">
-        <strong>👨‍🏫 {{ teacher_name }} | 🏫 {{ school_name }} | 📚 {{ subject_name }}</strong>
+        <strong>👨‍🏫 Professor: {{ teacher_name }} | 🏫 Escola: {{ school_name }} | 📚 Disciplina: {{ subject_name }}</strong>
     </nav>
+
     <main class="card-grid">
         <div class="card"><img src="/{{ card1_image }}"><p>Sobre o Professor</p></div>
         <div class="card"><img src="/{{ card2_image }}"><p>O que é Sociologia</p></div>
         <div class="card"><img src="/{{ card3_image }}"><p>Temas Estudados</p></div>
         <div class="card"><img src="/{{ card4_image }}"><p>Projetos</p></div>
     </main>
+
     <script>
       if (window.netlifyIdentity) {
         window.netlifyIdentity.on("init", user => {
-          if (!user) { window.netlifyIdentity.on("login", () => { document.location.href = "/admin/"; }); }
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
         });
       }
     </script>
