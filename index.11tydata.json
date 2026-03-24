@@ -1,0 +1,18 @@
+{
+  "mascot_image": "assets/img/Mascote.png",
+  "banner_image": "assets/img/banner.png",
+  "tagline": "SOCIOLOGIA E ALEGRIA",
+  "card1_gallery": [],
+  "card1_cover_image": "assets/img/sobre o professor.jpg",
+  "card2_gallery": [],
+  "card2_cover_image": "assets/img/o que é a sociologia.jpg",
+  "card3_gallery": [],
+  "card4_gallery": [],
+  "card3_cover_image": "assets/img/temas estudados.jpg",
+  "card4_cover_image": "assets/img/Projetos.jpg",
+  "title": "Professor Davi",
+  "card1_title": "Sobre o Professor",
+  "card2_title": "O que é Sociologia",
+  "card3_title": "Temas Estudados",
+  "card4_title": "Projetos"
+}

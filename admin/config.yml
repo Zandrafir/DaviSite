@@ -9,18 +9,75 @@ collections:
   - name: "pages"
     label: "Páginas"
     files:
-      - file: "index.njk"
+      - file: "index.11tydata.json" # Mudamos o nome aqui também!
         label: "Página Inicial"
         name: "home"
         fields:
-          - {label: "Título Principal", name: "title", widget: "string", required: false}
-          - {label: "Subtítulo (Legenda)", name: "tagline", widget: "string", required: false}
-          - {label: "Caminho Banner", name: "banner_image", widget: "string", required: false}
-          - {label: "Caminho Mascote", name: "mascot_image", widget: "string", required: false}
-          - {label: "Nome do Professor", name: "teacher_name", widget: "string", required: false}
-          - {label: "Escola", name: "school_name", widget: "string", required: false}
-          - {label: "Disciplina", name: "subject_name", widget: "string", required: false}
-          - {label: "Caminho Foto Prof", name: "card1_image", widget: "string", required: false}
-          - {label: "Caminho Foto Soc", name: "card2_image", widget: "string", required: false}
-          - {label: "Caminho Foto Temas", name: "card3_image", widget: "string", required: false}
-          - {label: "Caminho Foto Proj", name: "card4_image", widget: "string", required: false}
+          - label: "Título Principal"
+            name: "title"
+            widget: "string"
+          - label: "Subtítulo"
+            name: "tagline"
+            widget: "string"
+          - label: "Imagem Banner Topo"
+            name: "banner_image"
+            widget: "image"
+          - label: "Imagem Mascote"
+            name: "mascot_image"
+            widget: "image"
+          
+          # Pasta 1
+          - label: "CAPA: Sobre o Professor"
+            name: "card1_cover_image"
+            widget: "image"
+          - label: "TÍTULO: Pasta 1"
+            name: "card1_title"
+            widget: "string"
+          - label: "GALERIA: Pasta 1"
+            name: "card1_gallery"
+            widget: "list"
+            fields:
+              - {label: "Imagem", name: "image", widget: "image"}
+              - {label: "Legenda", name: "caption", widget: "string"}
+
+          # Pasta 2
+          - label: "CAPA: O que é Sociologia"
+            name: "card2_cover_image"
+            widget: "image"
+          - label: "TÍTULO: Pasta 2"
+            name: "card2_title"
+            widget: "string"
+          - label: "GALERIA: Pasta 2"
+            name: "card2_gallery"
+            widget: "list"
+            fields:
+              - {label: "Imagem", name: "image", widget: "image"}
+              - {label: "Legenda", name: "caption", widget: "string"}
+
+          # Pasta 3
+          - label: "CAPA: Temas Estudados"
+            name: "card3_cover_image"
+            widget: "image"
+          - label: "TÍTULO: Pasta 3"
+            name: "card3_title"
+            widget: "string"
+          - label: "GALERIA: Pasta 3"
+            name: "card3_gallery"
+            widget: "list"
+            fields:
+              - {label: "Imagem", name: "image", widget: "image"}
+              - {label: "Legenda", name: "caption", widget: "string"}
+
+          # Pasta 4
+          - label: "CAPA: Projetos"
+            name: "card4_cover_image"
+            widget: "image"
+          - label: "TÍTULO: Pasta 4"
+            name: "card4_title"
+            widget: "string"
+          - label: "GALERIA: Pasta 4"
+            name: "card4_gallery"
+            widget: "list"
+            fields:
+              - {label: "Imagem", name: "image", widget: "image"}
+              - {label: "Legenda", name: "caption", widget: "string"}

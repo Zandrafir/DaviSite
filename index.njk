@@ -1,61 +1,184 @@
----
-title: Professor Davi
-layout: null
-tagline: SOCIOLOGIA E ALEGRIA
-mascot_image: assets/img/Mascote.png
-banner_image: assets/img/banner.png
-teacher_name: Davi
-school_name: PEI José Ephin Mindlin
-subject_name: Sociologia
-card1_image: assets/img/foto_professor.png
-card2_image: assets/img/diagrama_sociologia.png
-card3_image: assets/img/tema1.png
-card4_image: assets/img/foto_estudantes.jpg
----
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PRO DAVI - Sociologia e Alegria</title>
+    <title>{{ title }}</title>
     <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <style>
-        body { margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #d1e1f1; }
-        .site-header { 
-            background-image: url('/{{ banner_image }}'); 
-            background-size: cover; background-position: center; color: white; padding: 80px 20px; text-align: center; 
+        /* Configurações Gerais e Fundo Blindado Pokémon Semi-transparente */
+        body { margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #d1e1f1; overflow-x: hidden; }
+        .bg-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            /* Camada de cor semi-transparente + Imagem de fundo Pokémon */
+            background-image: linear-gradient(rgba(209, 225, 241, 0.8), rgba(209, 225, 241, 0.8)), url('/assets/img/fundo-pokemon.png');
+            background-size: cover; background-attachment: fixed; z-index: -1;
         }
-        .header-text-block h1 { font-family: 'Luckiest Guy', cursive; font-size: 5rem; color: #ffcc00; text-shadow: 3px 3px 0 #3c5aa6; margin: 0; }
-        .header-mascot { height: 300px; position: absolute; right: 5%; top: 250px; }
-        .info-bar { background: white; padding: 15px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        .card-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 1200px; margin: 40px auto; padding: 20px; }
-        .card { background: white; border-radius: 12px; padding: 15px; text-align: center; border-bottom: 5px solid #3c5aa6; }
-        .card img { width: 100%; border-radius: 8px; }
-        @media (max-width: 900px) { .header-mascot { display: none; } .card-grid { grid-template-columns: repeat(2, 1fr); } }
+
+        /* Cabeçalho Restaurado com Banner Dinâmico */
+        .site-header { 
+            /* Puxa a imagem do banner escolhida no painel */
+            background-image: url('/{{ banner_image }}'); 
+            background-size: cover; 
+            background-position: center; 
+            color: white; 
+            padding: 70px 20px; 
+            text-align: center; 
+        }
+        /* 1. O Título Principal (Professor Davi) */
+        .site-header h1 { 
+            font-family: 'Luckiest Guy', cursive; 
+            font-size: 5.5rem; /* <-- Aumentei de 4rem para 5.5rem */
+            color: #ffcc00; 
+            text-shadow: 4px 4px 0 #3c5aa6; /* Aumentei um pouco a sombra também */
+            margin: 0; 
+        }
+
+        /* 2. O Subtítulo (SOCIOLOGIA E ALEGRIA) */
+        .tagline-text { 
+            font-family: 'Luckiest Guy'; 
+            color: #ffcc00; 
+            font-size: 2.2rem; /* <-- Aumentei de 1.6rem para 2.2rem */
+            margin-top: 15px;
+            text-shadow: 2px 2px 0 #3c5aa6;
+        }
+
+        /* Barra de Informações e Mascote */
+        .info-bar { 
+            background: white; 
+            padding: 30px; 
+            text-align: center; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+            position: relative; 
+            z-index: 10;
+        }
+        .info-bar strong { font-size: 1.9rem; color: #333; line-height: 1.4; }
+        
+        .header-mascot { 
+            height: 350px; /* Ajustado tamanho para harmonia visual */
+            position: absolute; 
+            right: 5%; 
+            bottom: 0px; 
+            z-index: 20;
+        }
+
+        /* Grade de Projetos - Os 4 Quadrados Originais, agora Clicáveis */
+        .card-grid { 
+            display: grid; 
+            grid-template-columns: repeat(4, 1fr); 
+            gap: 20px; 
+            max-width: 1100px; 
+            margin: 60px auto; 
+            padding: 0 20px; 
+        }
+        .card { 
+            background: white; 
+            border-radius: 15px; 
+            padding: 15px; 
+            text-align: center; 
+            border-bottom: 6px solid #3c5aa6;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            cursor: pointer; /* Indica que é clicável */
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card:hover { transform: scale(1.05); box-shadow: 0 6px 12px rgba(0,0,0,0.15); background: #f0f8ff; }
+        
+        /* A Imagem de Capa do Cartão (igual era antes) */
+        .card img { 
+            width: 100%; 
+            height: 160px; /* Altura fixa para alinhar */
+            object-fit: cover; 
+            border-radius: 10px; 
+        }
+        .card p { 
+            font-weight: bold; 
+            font-size: 1.2rem; 
+            color: #3c5aa6; 
+            margin-top: 15px; 
+        }
+
+        /* Estilo da Janela Pop-up (Modal) da Galeria */
+        .modal { 
+            display: none; position: fixed; z-index: 100; left: 0; top: 0; width: 100%; height: 100%; 
+            background-color: rgba(0,0,0,0.8); overflow-y: auto;
+        }
+        .modal-content { 
+            background: white; margin: 5% auto; padding: 25px; width: 80%; border-radius: 20px; 
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px;
+            box-shadow: 0 4px 15px rgba(255,255,255,0.2);
+        }
+        .close { color: red; float: right; font-size: 30px; cursor: pointer; font-weight: bold; padding: 5px; }
+        .gallery-item { text-align: center; border-bottom: 2px solid #ddd; padding-bottom: 10px; }
+        .gallery-item img { width: 100%; border-radius: 10px; height: 180px; object-fit: cover; }
+        .gallery-item p { margin-top: 10px; color: #555; }
+
+        @media (max-width: 900px) { 
+            .header-mascot { display: none; } 
+            .card-grid { grid-template-columns: repeat(2, 1fr); } 
+            
+            /* Ajuste para o título não quebrar no celular */
+            .site-header h1 { font-size: 3rem; } 
+            .tagline-text { font-size: 1.4rem; }
+        }
     </style>
 </head>
 <body>
+    <div class="bg-overlay"></div>
+
     <header class="site-header">
         <h1>{{ title }}</h1>
-        <p style="font-family: 'Luckiest Guy'; color: #ffcc00; font-size: 1.5rem;">{{ tagline }}</p>
+        <p class="tagline-text">{{ tagline }}</p>
     </header>
-    <img src="/{{ mascot_image }}" class="header-mascot">
+    
     <nav class="info-bar">
-        <strong>👨‍🏫 {{ teacher_name }} | 🏫 {{ school_name }} | 📚 {{ subject_name }}</strong>
+        <strong>Professor Davi | Escola José Ephim Mindlin | Sociologia e Gamificação</strong>
+        <img src="/{{ mascot_image }}" class="header-mascot" alt="Mascote">
     </nav>
+    
     <main class="card-grid">
-        <div class="card"><img src="/{{ card1_image }}"><p>Sobre o Professor</p></div>
-        <div class="card"><img src="/{{ card2_image }}"><p>O que é Sociologia</p></div>
-        <div class="card"><img src="/{{ card3_image }}"><p>Temas Estudados</p></div>
-        <div class="card"><img src="/{{ card4_image }}"><p>Projetos</p></div>
+        <div class="card" onclick="openModal('modal1')">
+            <img src="/{{ card1_cover_image }}">
+            <p>{{ card1_title }}</p>
+        </div>
+        <div class="card" onclick="openModal('modal2')">
+            <img src="/{{ card2_cover_image }}">
+            <p>{{ card2_title }}</p>
+        </div>
+        <div class="card" onclick="openModal('modal3')">
+            <img src="/{{ card3_cover_image }}">
+            <p>{{ card3_title }}</p>
+        </div>
+        <div class="card" onclick="openModal('modal4')">
+            <img src="/{{ card4_cover_image }}">
+            <p>{{ card4_title }}</p>
+        </div>
     </main>
+    
+    {% for i in [1,2,3,4] %}
+    <div id="modal{{i}}" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal{{i}}')">&times; FECHAR</span>
+            
+            {# Puxa o título da seção dinâmica para a galeria #}
+            {% set title_field = "card" ~ i ~ "_title" %}
+            <h2 style="grid-column: span 3; text-align: center; color: #3c5aa6;">Galeria: {{ home[title_field] }}</h2>
+            
+            {# Acessa a lista de fotos dinâmica para esta seção #}
+            {% set gallery_field = "card" ~ i ~ "_gallery" %}
+            {% for item in home[gallery_field] %}
+            <div class="gallery-item">
+                <img src="/{{ item.image }}">
+                <p>{{ item.caption }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endfor %}
+
     <script>
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", user => {
-          if (!user) { window.netlifyIdentity.on("login", () => { document.location.href = "/admin/"; }); }
-        });
-      }
+        function openModal(id) { document.getElementById(id).style.display = "block"; }
+        function closeModal(id) { document.getElementById(id).style.display = "none"; }
+        window.onclick = function(event) { if (event.target.className === "modal") { event.target.style.display = "none"; } }
     </script>
 </body>
 </html>
